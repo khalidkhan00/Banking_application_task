@@ -18,7 +18,7 @@ public class UserController {
 	private UserService userservice;
 	
 	
-	@GetMapping("/register")
+	@PostMapping("/register")
 	public ResponseEntity<Object> register(@RequestBody UserRegister userregister ){
 		
 		
