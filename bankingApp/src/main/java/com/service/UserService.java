@@ -21,15 +21,13 @@ public class UserService {
 	
 	public String addUsers(UserRegister userregister) {
 		
-		if(userregisterdao.exists(userregister.getEmail()))
-		{
-			return "already exists";
-		}
-		else
-		{
 		userregisterdao.save(userregister);
 		return "user added";
-		}
+		/*
+		 * if(userregisterdao.exists(userregister.getEmail())) { return
+		 * "already exists"; } else { userregisterdao.save(userregister); return
+		 * "user added"; }
+		 */
 	}
 	 
 	
