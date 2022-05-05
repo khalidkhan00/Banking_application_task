@@ -7,6 +7,6 @@ import com.entity.UserRegister;
 @Repository
 public interface UserRegisterDAO extends JpaRepository<UserRegister, String> {
 
-	boolean exists(String email);
+	
 
 }

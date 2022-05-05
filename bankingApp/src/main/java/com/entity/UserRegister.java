@@ -1,12 +1,17 @@
 package com.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usernew_table")
+@Table(name="userregister_table")
 public class UserRegister {
 
+	@Id
+	@GeneratedValue
+	private int regid;
 	private String UserName;
 	private String Email;
 	private String Password;
