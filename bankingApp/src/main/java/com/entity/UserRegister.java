@@ -12,12 +12,12 @@ public class UserRegister {
 	@Id
 	@GeneratedValue
 	private int regid;
-	private String UserName;
-	private String Email;
-	private String Password;
+	private String userName;
+	private String email;
+	private String password;
 	@Override
 	public String toString() {
-		return "UserRegister [UserName=" + UserName + ", Email=" + Email + ", Password=" + Password + "]";
+		return "UserRegister [UserName=" + userName + ", Email=" + email + ", Password=" + password + "]";
 	}
 	public UserRegister() {
 		super();
@@ -25,26 +25,26 @@ public class UserRegister {
 	}
 	public UserRegister(String userName, String email, String password) {
 		super();
-		UserName = userName;
-		Email = email;
-		Password = password;
+		this.userName = userName;
+		this.email = email;
+		this.password = password;
 	}
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 	public void setUserName(String userName) {
-		UserName = userName;
+		this.userName = userName;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 }
