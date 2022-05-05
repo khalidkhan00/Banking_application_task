@@ -13,6 +13,7 @@ public class UserService {
 	
 	@Autowired
 	private UserDAO userdao;
+	@Autowired
 	private UserRegisterDAO userregisterdao;
 	
 	public String loginValid() {
@@ -29,7 +30,11 @@ public class UserService {
 		 * "user added"; }
 		 */
 	}
-	 
+	
+	public String addDetails(User user) {
+		userdao.save(user);
+		return "user details added";
+	}
 	
 
 }

@@ -1,11 +1,12 @@
 package com.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.entity.UserRegister;
 @Repository
-public interface UserRegisterDAO extends JpaRepository<UserRegister, String> {
+public interface UserRegisterDAO extends CrudRepository<UserRegister, Integer> {
 
 	
 

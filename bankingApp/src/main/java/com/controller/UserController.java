@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.entity.User;
 import com.entity.UserRegister;
 import com.service.UserService;
 
@@ -34,6 +35,16 @@ public class UserController {
 		else  {
 			return (ResponseEntity<Object>) ResponseEntity.badRequest();
 		}
+	}
+	
+	@PostMapping("/adddetails")
+	public ResponseEntity<Object> addDetails(@RequestBody User user){
+		String res = userservice.addDetails(user);
+		if(res=="user details added") {
+			return ResponseEntity.ok("user details added");
+		}
+		return (ResponseEntity<Object>) ResponseEntity.badRequest();
+		
 	}
 
 }
