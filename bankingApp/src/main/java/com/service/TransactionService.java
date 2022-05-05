@@ -19,6 +19,7 @@ public class TransactionService {
 	
 	@Autowired
 	private TransactDAO transactdao;
+	@Autowired
 	private UserDAO userdao;
 	
 	public void extractalltranfers() {
@@ -32,23 +33,29 @@ public class TransactionService {
 		extractallusers();
 		for(User user:acclist) {
 			if((transaction.getFromAcc().equals(user.getAccNo()))&&(transaction.getAmount()<= user.getAmount())) {
-				return "Transaction successfull";
+				user.setAmount( user.getAmount()-transaction.getAmount());
+				userdao.saveAndFlush(user);
+				transactdao.save(transaction);
+				return "Transaction Successfull";
 			}
 		}
 		return "Transaction unsuccessfull";
 		
 	}
 
-	public List<Transaction> allTransfers(String AccNo)
+	public List<Transaction> allTransaction(String AccNo)
 	{
 		extractalltranfers();
+		System.out.println(transactList);
 		List<Transaction> specTransfer = new ArrayList<Transaction>();
 		for(Transaction transact:transactList) {
-			if(AccNo==(transact.getFromAcc())) {
+			
+			if((transact.getFromAcc()).equals(AccNo)) {
 				specTransfer.add(transact);
 				
 			}
 		}
+		System.out.println(specTransfer);
 		return specTransfer;
 		
 	}

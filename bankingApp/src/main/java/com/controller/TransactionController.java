@@ -26,14 +26,17 @@ public class TransactionController {
 		if(transactionservice.transfer(transaction)=="Transaction Successfull") {
 			return ResponseEntity.ok("Transaction Successfull");
 		}
-		return (ResponseEntity<Object>) ResponseEntity.badRequest();
+		else {
+		return null;
+		}
 		
 	}
 	
-	@GetMapping("/tranfer/{AccNo}")
+	@GetMapping("/transfer/{AccNo}")
 	public List<Transaction> allTransfer(@PathVariable("AccNo") String accNo){
 		
-		return transactionservice.allTransfers(accNo);
+		List<Transaction> transactlist = transactionservice.allTransaction(accNo);
+		return transactlist;
 		
 	}
 

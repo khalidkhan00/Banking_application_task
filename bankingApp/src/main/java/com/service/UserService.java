@@ -36,5 +36,8 @@ public class UserService {
 		return "user details added";
 	}
 	
+	public String updateDetails(User user) {
+		return null;
+	}
 
 }
