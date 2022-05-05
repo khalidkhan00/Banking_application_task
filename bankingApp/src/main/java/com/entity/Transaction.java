@@ -13,7 +13,7 @@ public class Transaction {
 	private String fromAcc;
 	private String toAcc;
 	private String bankName;
-	private String IFSCcode;
+	private String ifsccode;
 	private int amount;
 	
 	public long getTransactId() {
@@ -41,10 +41,10 @@ public class Transaction {
 		this.bankName = bankName;
 	}
 	public String getIFSCcode() {
-		return IFSCcode;
+		return ifsccode;
 	}
 	public void setIFSCcode(String iFSCcode) {
-		IFSCcode = iFSCcode;
+		ifsccode = iFSCcode;
 	}
 	public int getAmount() {
 		return amount;
@@ -58,7 +58,7 @@ public class Transaction {
 		this.fromAcc = fromAcc;
 		this.toAcc = toAcc;
 		this.bankName = bankName;
-		IFSCcode = iFSCcode;
+		ifsccode = iFSCcode;
 		this.amount = amount;
 	}
 	public Transaction() {
@@ -68,7 +68,7 @@ public class Transaction {
 	@Override
 	public String toString() {
 		return "Transaction [transactId=" + transactId + ", fromAcc=" + fromAcc + ", toAcc=" + toAcc + ", bankName="
-				+ bankName + ", IFSCcode=" + IFSCcode + ", amount=" + amount + "]";
+				+ bankName + ", IFSCcode=" + ifsccode + ", amount=" + amount + "]";
 	}
 	
 	
